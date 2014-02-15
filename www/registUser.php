@@ -31,7 +31,7 @@ function updateUserDB($token,$gkey){
 	$data = json_decode($json);
 	$userid = $data->id;
 	$sex = $data->gender=="male"?0:1;
-	$birthday = "";
+	$birthday = "$data->MM/DD/YYYY";
 
 	$url = "https://graph.facebook.com/me/feed?with=location&access_token=".$token;
 	$json = request($url);
